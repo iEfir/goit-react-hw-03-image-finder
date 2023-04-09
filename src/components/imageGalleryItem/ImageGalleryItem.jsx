@@ -49,10 +49,7 @@ class ImageGalleryItem extends Component {
         if (prevProps.searchQuery !== searchQuery) {
           return;
         } else {
-          const { pictures, totalHitsPictures } = await fetchPictures(
-            searchQuery,
-            currentPage
-          );
+          const { pictures } = await fetchPictures(searchQuery, currentPage);
           this.setState(prevState => ({
             items: [...prevState.items, ...pictures],
           }));
