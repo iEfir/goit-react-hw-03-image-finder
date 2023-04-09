@@ -81,8 +81,6 @@ class ImageGalleryItem extends Component {
 
     const error = this.state.error;
 
-    const totalHits = this.state.totalHits;
-    // console.log('totalHits:', totalHits);
     const loading = this.state.loading;
 
     return (
