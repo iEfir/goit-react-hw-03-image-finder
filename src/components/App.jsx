@@ -9,7 +9,7 @@ import { Loader } from './reactLoader/Loader';
 import { Modal } from './Modal/Modal';
 import { Container } from './App.styled';
 import { ErrorData } from './error/errorData/ErrorData';
-import { errorMassage } from './error/errorMessage';
+import { errorMassage } from './error/messageError';
 
 export class App extends Component {
   state = {
