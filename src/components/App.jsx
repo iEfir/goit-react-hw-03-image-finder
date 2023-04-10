@@ -8,8 +8,8 @@ import { LoadMoreBtn } from './buttonLoadMore/Button';
 import { Loader } from './reactLoader/Loader';
 import { Modal } from './Modal/Modal';
 import { Container } from './App.styled';
-import { ErrorData } from './error/errorData/ErrorData';
-import { errorMassage } from './error/messageError';
+import { ErrorData } from './messageError/errorData/ErrorData';
+import { errorMassage } from './messageError/messageError';
 
 export class App extends Component {
   state = {
