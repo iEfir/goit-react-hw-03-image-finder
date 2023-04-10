@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
-import { fetchImage } from './Api/Api';
+import { fetchImage } from './api/Api';
 import { Searchbar } from './searchbar/Searchbar';
-import { ImageGallery } from './ImageGallery/ImageGallery';
-import { LoadMoreBtn } from './Button/Button';
-import { Loader } from './Loader/Loader';
+import { ImageGallery } from './imageGallery/ImageGallery';
+import { LoadMoreBtn } from './button/Button';
+import { Loader } from './loader/Loader';
 
-import { Modal } from './Modal/Modal';
+import { Modal } from './modal/Modal';
 
 import { errorMassage } from './Error/errorMessage';
-import { ErrorData } from './Error/ErrorData/ErrorData';
+import { ErrorData } from './Error/errorData/ErrorData';
 
 import { Container } from './App.styled';
 
@@ -116,7 +116,7 @@ export class App extends Component {
               onUpdateModalPicture={this.updateModalPicture}
             />
           )}
-          {images && images.length > 0 && btnVision && (
+          {images && images.length > 11 && btnVision && (
             <>
               <LoadMoreBtn
                 onLoadMore={this.onClickPageUp}

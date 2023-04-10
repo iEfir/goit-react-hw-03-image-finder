@@ -1,4 +1,4 @@
-import erroeImage from '../Img/pngwing.com.png';
+import erroeImage from '../img/pngwing.com.png';
 
 import { Conteiner, Img, Text } from './ErrorData.styled';
 
