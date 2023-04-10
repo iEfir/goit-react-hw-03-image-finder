@@ -1,45 +1,47 @@
-import { Component } from 'react';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import { Formik } from 'formik';
+import {
+  ConteinerBar,
+  Button,
+  LabelBtn,
+  Input,
+  FormsSt,
+} from './Searchbar.styled';
 
-class Searchbar extends Component {
-  state = {
-    value: '',
-  };
-
-  handleImagesChanges = event => {
-    this.setState({ value: event.currentTarget.value });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    if (this.state.value.trim() === '') {
-      Notify.failure('Введите запрос снова');
-      return;
+export const Searchbar = ({ onSubmit }) => {
+  const handleSubmit = ({ text }, actions) => {
+    if (text.trim() === '') {
+      return toast.warn('Please enter a request!');
     }
-    this.props.onSubmit(this.state.value);
+
+    onSubmit(text);
+    actions.setSubmitting(false);
   };
 
-  render() {
-    return (
-      <header className="searchbar">
-        <form className="searchForm" onSubmit={this.handleSubmit}>
-          <button type="submit" className="searchForm-button">
-            <span className="searchForm-button-label"> Search</span>
-          </button>
+  return (
+    <ConteinerBar>
+      <Formik initialValues={{ text: '' }} onSubmit={handleSubmit}>
+        {({ isSubmitting }) => (
+          <FormsSt>
+            <Button type="submit" disabled={isSubmitting}>
+              <LabelBtn>Search</LabelBtn>
+            </Button>
 
-          <input
-            className="searchForm-input"
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search images and photos"
-            value={this.state.value}
-            onChange={this.handleImagesChanges}
-          />
-        </form>
-      </header>
-    );
-  }
-}
+            <Input
+              name="text"
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+            />
+          </FormsSt>
+        )}
+      </Formik>
+    </ConteinerBar>
+  );
+};
 
-export { Searchbar };
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

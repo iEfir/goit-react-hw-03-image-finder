@@ -1,15 +1,26 @@
-import { ImageGalleryItem } from 'components/imageGalleryItem/ImageGalleryItem';
+import PropTypes from 'prop-types';
 
-const ImageGallery = ({ searchQuery, getTotalHits, currentPage, basePage }) => {
+import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
+
+import { Gallery } from './ImageGallery.styled';
+
+export const ImageGallery = ({ images, onClick, onUpdateModalPicture }) => {
   return (
-    <ul className="imageGallery">
-      <ImageGalleryItem
-        searchQuery={searchQuery}
-        getTotalHits={getTotalHits}
-        currentPage={currentPage}
-      />
-    </ul>
+    <Gallery>
+      {images.map(image => (
+        <ImageGalleryItem
+          key={image.id}
+          images={image}
+          onClick={onClick}
+          onGiveImg={onUpdateModalPicture}
+        />
+      ))}
+    </Gallery>
   );
 };
 
-export { ImageGallery };
+ImageGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onUpdateModalPicture: PropTypes.func.isRequired,
+};
