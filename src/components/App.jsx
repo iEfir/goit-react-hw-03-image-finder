@@ -7,7 +7,7 @@ import { ImageGallery } from './imageGallery/ImageGallery';
 import { LoadMoreBtn } from './buttonLoadMore/Button';
 import { Loader } from './reactLoader/Loader';
 
-import { Modal } from './modal/Modal';
+import { Modal } from './Modal/Modal';
 
 import { errorMassage } from './Error/errorMessage';
 import { ErrorData } from './Error/errorData/ErrorData';
