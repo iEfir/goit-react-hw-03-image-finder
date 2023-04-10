@@ -9,7 +9,7 @@ import { Loader } from './reactLoader/Loader';
 import { Modal } from './Modal/Modal';
 import { Container } from './App.styled';
 import { ErrorData } from './messageError/errorData/ErrorData';
-import { errorMassage } from './messageError/messageError';
+import { errorMessage } from './messageError/errorMessage';
 
 export class App extends Component {
   state = {
@@ -40,7 +40,7 @@ export class App extends Component {
       this.setState({ images: response.hits });
 
       if (response.total === 0) {
-        this.setState({ error: errorMassage(search) });
+        this.setState({ error: errorMessage(search) });
       }
     } catch {
       this.setState({ error: ErrorData() });
