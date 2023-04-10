@@ -5,7 +5,7 @@ import { fetchImage } from './apiService/Api';
 import { Searchbar } from './searchbar/Searchbar';
 import { ImageGallery } from './imageGallery/ImageGallery';
 import { LoadMoreBtn } from './buttonLoadMore/Button';
-import { Loader } from './loader/Loader';
+import { Loader } from './reactLoader/Loader';
 
 import { Modal } from './modal/Modal';
 
