@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
-import { fetchImage } from './api/Api';
+import { fetchImage } from './apiService/Api';
 import { Searchbar } from './searchbar/Searchbar';
 import { ImageGallery } from './imageGallery/ImageGallery';
 import { LoadMoreBtn } from './button/Button';
