@@ -9,8 +9,8 @@ import { Loader } from './reactLoader/Loader';
 
 import { Modal } from './Modal/Modal';
 
-import { errorMassage } from './Error/errorMessage';
-import { ErrorData } from './Error/errorData/ErrorData';
+import { errorMassage } from './error/errorMessage';
+import { ErrorData } from './error/errorData/ErrorData';
 
 import { Container } from './App.styled';
 
