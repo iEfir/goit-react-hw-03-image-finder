@@ -4,7 +4,7 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 import { fetchImage } from './apiService/Api';
 import { Searchbar } from './searchbar/Searchbar';
 import { ImageGallery } from './imageGallery/ImageGallery';
-import { LoadMoreBtn } from './button/Button';
+import { LoadMoreBtn } from './buttonLoadMore/Button';
 import { Loader } from './loader/Loader';
 
 import { Modal } from './modal/Modal';
